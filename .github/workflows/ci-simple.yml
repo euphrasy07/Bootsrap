@@ -1,0 +1,9 @@
+name: CI Simple
+on: [workflow_dispatch, push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: echo "✅ GitHub Actions fonctionne !"
+    - run: ls -la

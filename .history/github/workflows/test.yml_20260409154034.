@@ -24,4 +24,4 @@ jobs:
               -name: echo & ls files
               run: |
               echo "Hello Github Actions"
-              git ls-files
+              

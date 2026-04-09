@@ -20,8 +20,3 @@ jobs:
                     cache: npm
             - name: Install
               run: npm ci
-
-              -name: echo & ls files
-              run: |
-              echo "Hello Github Actions"
-              git ls-files

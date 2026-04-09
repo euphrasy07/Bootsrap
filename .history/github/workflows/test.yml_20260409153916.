@@ -9,7 +9,7 @@ jobs:
 
         defaults:
             run:
-                working-directory: ./bootstrap
+                working
         steps:
             - name: Checkout
                 uses: actions/checkout@v3
@@ -20,8 +20,3 @@ jobs:
                     cache: npm
             - name: Install
               run: npm ci
-
-              -name: echo & ls files
-              run: |
-              echo "Hello Github Actions"
-              git ls-files
