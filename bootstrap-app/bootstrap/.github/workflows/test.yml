@@ -1,4 +1,4 @@
-name: CI
+name: CI Complete
 
 on:
   push:
@@ -9,7 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
+    - name: Checkout code
       uses: actions/checkout@v4
 
     - name: Setup Node.js
@@ -21,8 +21,14 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Hello Github Actions!
-      run: echo "Hello Github Actions!"
+    - name: Run unit tests
+      run: npx mocha tests/test.js
 
-    - name: List files
-      run: ls -la
+    - name: Lint code
+      run: npx eslint .
+
+    - name: List project structure
+      run: |
+        ls -la
+        ls -la tests/
+        ls -la modules/
