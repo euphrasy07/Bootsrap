@@ -27,7 +27,7 @@ app.get('/mul', (req, res) => {
 app.get('/div', (req, res) => {
   const result = calc.divide(parseFloat(req.query.a), parseFloat(req.query.b));
   if (result == Infinity) {
-    res.send(`Cannot divide ${req.query.a} by zero`);
+    res.send(`C                                                                                                             annot divide ${req.query.a} by zero`);
   }
   res.send(`${req.query.a} / ${req.query.b} = \
     ${calc.multiply(parseFloat(req.query.a), parseFloat(req.query.b))}`);
@@ -38,6 +38,12 @@ app.get('/pow', (req, res) => {
   res.send(`${req.query.a} ^ ${req.query.b} = ${calc.power(parseFloat(req.query.a), parseFloat(req.query.b))}`);
 });
 
+app.get('/pow', (req, res) => {
+  res.send(`$${req.query.a} ^ $${req.query.b} = $${calc.power(parseFloat(req.query.a), parseFloat(req.query.b))}`);
+});
+
 app.listen(PORT, () => {
   console.log(`Calculator app listening on port ${PORT}!`);
 });
+
+
